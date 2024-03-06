@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Привет</title>
+  <style>
+    body {
+      background-color: #ecb4db;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #a12a7e;
+      font-family: sans-serif;
+      font-weight: bold;
+      margin-top: 80px;
+    }
+    .btn {
+      margin-top: 20px;
+      width: 150px;
+      height: 40px;
+      background-color: #ee64e7;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 17px;
+      border: 1px solid transparent;
+      margin-right: 150px;
+      transition: 0,09s;
+    }
+    #snus {
+      position: absolute;
+      right: -90px;
+    }
+    .btn:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    .container {
+      width: 485px;
+      margin: 0 auto;
+      /*border: 1px solid #000;*/
+      text-align: center;
+      position: relative;
+    }
+    img {
+      width: 360px;
+      height: 360px;
+    }
+    .mini {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Привет. Пойдем гулять?</h1>
+  <img src="./img/peach-goma-hello-peach-and-goma.gif" alt="hello">
+  <button class="btn" id="yes">Да!</button>
+  <button class="btn" id="snus">Нет</button>
+
+  
+  
+
+</div>
+  <script>
+    const random = (min, max) => {
+      const rand = min + Math.random() * (max - min + 1);
+      return Math.floor(rand);
+    }
+    
+    const btn = document.querySelector('#snus');
+    btn.addEventListener('mouseenter', () => {
+      btn.style.left = `${random(0, 90)}%`;
+      btn.style.top = `${random(0, 90)}%`;
+    });
+    const body = document.body;
+    const yes = document.querySelector('#yes');
+    yes.addEventListener('click', () => {
+      body.style.backgroundColor = 'white';
+      document.body.innerHTML = `<div class="container"><h1>Ну тогда пошли <img class="mini"  src="./img/83ecf223215f68dc737c04be1df02041.gif" alt=""></h1>
+      <img src="./img/a7ac5f3f935e5868bdf4c775228aa59c.gif" alt="hello"></div>`;
+    })
+
+
+  </script>
+</body>
+</html>
